@@ -1,0 +1,60 @@
+﻿@model HRManagementMVCCore31DapperWebApp1.Models.Salary
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <h5>Salary Details</h5>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @* @Html.DisplayNameFor(model => model.SalaryId) *@
+            Salary Id
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SalaryId)
+        </dd>
+        <dt class = "col-sm-2">
+            @* @Html.DisplayNameFor(model => model.EmployeeId) *@
+            Employee Id
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EmployeeId)
+        </dd>
+        <dt class = "col-sm-2">
+            @* @Html.DisplayNameFor(model => model.Basic) *@
+            Basic
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Basic)
+        </dd>
+        <dt class = "col-sm-2">
+            @* @Html.DisplayNameFor(model => model.HRA) *@
+            HRA
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.HRA)
+        </dd>
+        <dt class = "col-sm-2">
+            @* @Html.DisplayNameFor(model => model.TA) *@
+            TA
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TA)
+        </dd>
+        <dt class = "col-sm-2">
+            @* @Html.DisplayNameFor(model => model.Total) *@
+            Total
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Total)
+        </dd>
+    </dl>
+</div>
+<div>
+    @* @Html.ActionLink("Edit", "Edit", new {  id = Model.SalaryId }) |
+    <a asp-action="Index">Back to List</a> *@
+    <a href="@Url.Action("Edit", new { id=Model.SalaryId })" class="btn btn-warning">Edit</a> |
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Back to List</a>
+</div>

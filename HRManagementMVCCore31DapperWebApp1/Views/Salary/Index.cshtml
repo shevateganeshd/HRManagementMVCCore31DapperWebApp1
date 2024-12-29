@@ -1,0 +1,78 @@
+﻿@model IEnumerable<HRManagementMVCCore31DapperWebApp1.Models.Salary>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h5>Salary List</h5>
+
+<p>
+    <a href="@Url.Action("Create")" class="btn btn-primary">Create Salary</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            @* <th>
+                @Html.DisplayNameFor(model => model.SalaryId) 
+                Salary Id
+            </th> *@
+            <th>
+                @* @Html.DisplayNameFor(model => model.EmployeeId) *@
+                Employee Id
+            </th>
+            <th>
+                @* @Html.DisplayNameFor(model => model.Basic) *@
+                Basic
+            </th>
+            <th>
+                @* @Html.DisplayNameFor(model => model.HRA) *@
+                HRA
+            </th>
+            <th>
+                @* @Html.DisplayNameFor(model => model.TA) *@
+                TA
+            </th>
+            <th>
+                @* @Html.DisplayNameFor(model => model.Total) *@
+                Total
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            @* <td>
+                @Html.DisplayFor(modelItem => item.SalaryId)
+            </td> *@
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Basic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HRA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total)
+            </td>
+            @* <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.SalaryId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.SalaryId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.SalaryId })
+            </td> *@
+                <td>
+                    <a href="@Url.Action("Edit", new { id=item.SalaryId })" class="btn btn-warning">Edit</a> |
+                    <a href="@Url.Action("Details", new { id=item.SalaryId })" class="btn btn-info">Details</a> |
+                    <a href="@Url.Action("Delete", new { id=item.SalaryId })" class="btn btn-danger">Delete</a>
+                </td>
+        </tr>
+}
+    </tbody>
+</table>
